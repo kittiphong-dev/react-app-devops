@@ -6,7 +6,8 @@ export default function Home() {
     <h1>Home</h1>
     <p>Welcome to my app</p>
     <p>This app is deployed using Jenkins</p>
-    <p>Version 0.0.2</p>
+    <p>New Version</p>
+    <p>kittiphong</p>
     </div>
   );
 }
