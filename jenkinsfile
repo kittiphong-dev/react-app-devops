@@ -16,8 +16,8 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                // ดึงโค้ดล่าสุดลงมาจาก Git (ถ้าเซ็ต Jenkins คู่กับ GitHub/GitLab ไว้)
-                checkout scm
+                // ดึงโค้ดล่าสุดลงมาจาก Repository ของคุณโดยตรง
+                git branch: 'main', url: 'https://github.com/kittiphong-dev/react-app-devops.git'
             }
         }
         
@@ -35,6 +35,9 @@ pipeline {
         }
         
         stage('Push to Docker Hub') {
+            when {
+                branch 'main'
+            }
             steps {
                 script {
                     // ขั้นตอนนี้จะดึง Username/Password จาก Jenkins Credentials มาเพื่อล็อกอิน
