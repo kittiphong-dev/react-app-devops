@@ -35,9 +35,6 @@ pipeline {
         }
         
         stage('Push to Docker Hub') {
-            when {
-                branch 'main'
-            }
             steps {
                 script {
                     // ขั้นตอนนี้จะดึง Username/Password จาก Jenkins Credentials มาเพื่อล็อกอิน
